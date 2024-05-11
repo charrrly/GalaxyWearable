@@ -76,6 +76,11 @@ jobs:
       run: |
        apktool b ${{ matrix.package }} --use-aapt2
 
+    - name: Sign APK
+      if: steps.check.outputs.need_update == 1
+      run: |
+       signapk /tmp/releasekey.x509.pem /tmp/releasekey.pk8 ${{ matrix.package }}/dist/${{ matrix.package }}.apk ${{ matrix.package }}/dist/${{ matrix.package }}-signed.apk
+
     - name: Update current version
       if: steps.check.outputs.need_update == 1
       run: |
@@ -101,4 +106,4 @@ jobs:
       with:
         tag_name: ${{ matrix.package }}-${{ steps.check.outputs.latest_version }}-patched
         files: |
-         ${{ matrix.package }}/dist/${{ matrix.package }}.apk
+         ${{ matrix.package }}/dist/${{ matrix.package }}-signed.apk
