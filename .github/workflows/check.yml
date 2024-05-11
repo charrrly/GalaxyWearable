@@ -56,7 +56,6 @@ jobs:
 
     - name: Prepare signing
       id: cert
-      if: steps.check.outputs.need_update == 1
       run: |
        echo "${{ secrets.RELEASEKEY_X509 }}" > /tmp/releasekey.x509.pem
        echo "${{ secrets.RELEASEKEY_PK8 }}" | base64 -d > /tmp/releasekey.pk8
