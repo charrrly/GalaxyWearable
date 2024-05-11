@@ -13,21 +13,6 @@ jobs:
     strategy:
       matrix:
         include:
-          - package: com.samsung.android.app.watchmanager
-          - package: com.samsung.android.geargplugin
-          - package: com.samsung.android.gearnplugin
-          - package: com.samsung.android.waterplugin
-          - package: com.samsung.android.gearpplugin
-          - package: com.samsung.android.gearrplugin
-          - package: com.samsung.android.gearfit2plugin
-          - package: com.samsung.android.gearoplugin
-          - package: com.samsung.accessory
-          - package: com.samsung.accessory.fridaymgr
-          - package: com.samsung.accessory.atticmgr
-          - package: com.samsung.accessory.berrymgr
-          - package: com.samsung.accessory.pearlmgr
-          - package: com.samsung.accessory.popcornmgr
-          - package: com.samsung.accessory.neobeanmgr
           - package: com.samsung.wearable.fit3plugin
       max-parallel: 1
 
