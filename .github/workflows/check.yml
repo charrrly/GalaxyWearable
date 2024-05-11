@@ -13,6 +13,7 @@ jobs:
     strategy:
       matrix:
         include:
+          - package: com.samsung.android.app.watchmanager
           - package: com.samsung.wearable.fit3plugin
       max-parallel: 1
 
